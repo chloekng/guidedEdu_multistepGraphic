@@ -167,6 +167,8 @@ $(document).ready(function() {
       path: 'https://assets1.lottiefiles.com/packages/lf20_hbkV3h.json' // the path to the animation json
     });
 
+    starburstAnimate.goToAndPlay(0)
+
 
 
 
@@ -232,19 +234,19 @@ $(document).ready(function() {
 
 
 
-  let starburst = document.createElement("div");
-  starburst.className = "starburst";
-  masonryBg.append(starburst);
+  // let starburst = document.createElement("div");
+  // starburst.className = "starburst";
+  // modalBg.append(starburst);
 
-  // lottie starburst
+  // // lottie starburst
 
-  let starburstAnimate = lottie.loadAnimation({
-    container: starburst, // the dom element that will contain the animation
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    path: 'https://assets1.lottiefiles.com/packages/lf20_hbkV3h.json' // the path to the animation json
-  });
+  // let starburstAnimate = lottie.loadAnimation({
+  //   container: starburst, // the dom element that will contain the animation
+  //   renderer: 'svg',
+  //   loop: false,
+  //   autoplay: false,
+  //   path: 'https://assets1.lottiefiles.com/packages/lf20_hbkV3h.json' // the path to the animation json
+  // });
 
 
 
@@ -267,9 +269,9 @@ $(document).ready(function() {
 
     // play lottie
 
-    setTimeout(function(){ 
-      starburstAnimate.goToAndPlay(0)
-    }, 1900);
+    // setTimeout(function(){ 
+    //   starburstAnimate.goToAndPlay(0)
+    // }, 1900);
     
 
   }
