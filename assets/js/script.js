@@ -6,7 +6,7 @@ $(document).ready(function() {
     items: '.grid-item'
   });
 
-
+  console.log("graphic")
 
   // by default, hide the closeup
 
@@ -150,6 +150,7 @@ $(document).ready(function() {
 
     if (i == 5) {
       modalMasonryPin.className = "item item-main"
+      modalMasonryPin.id = "item-main"
     } else if (i == 1 || i == 3 || i == 7 || i ==8) {
       modalMasonryPin.className = "item item-short";
     } else if (i == 4) {
@@ -162,11 +163,28 @@ $(document).ready(function() {
     modalMasonry.append(modalMasonryPin);
   }
 
+
   //make modal save
 
   let modalSave = document.createElement("div");
   modalSave.className = "modal-save";
   modalSave.innerHTML = "Save";
+
+  // lottie starburst
+
+  let pinGraphic = document.createElement("div");
+  pinGraphic.className = "pinGraphic";
+  pinGraphic.innerHTML = "test";
+  $(".item-main").append(pinGraphic);
+
+
+  let cookingAnimate = lottie.loadAnimation({
+    container: pinGraphic, // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets10.lottiefiles.com/private_files/lf30_gjaElU.json' // the path to the animation json
+  });
 
 
   function firstHFCard() {
@@ -272,6 +290,10 @@ $(document).ready(function() {
     $(".item-main").css("animation-duration", "3s");
     $(".item-main").css("animation-iteration-count", "infinite");
     $(".item-main").css("animation-timing-function", "cubic-bezier(.63, .09, .3, .43");
+
+    // lottie animation
+
+    cookingAnimate.goToAndPlay(0)
 
 
     // this is the first step
@@ -607,6 +629,8 @@ $(document).ready(function() {
   });
 
 
+
+
   // animate board name up 
   let modalBoardName = document.createElement("div");
   modalBoardName.className = "modal-board-name";
@@ -666,7 +690,6 @@ $(document).ready(function() {
 
     // remove hand
     handSvg.remove();
-
 
     // border-radius & width transition with CSS is smoother
 

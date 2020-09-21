@@ -545,6 +545,12 @@ h3 {
 
 }
 
+.pinGraphic {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 
 .item-main .modal-save {
   top: -6px;
