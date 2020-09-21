@@ -54,9 +54,9 @@ $(document).ready(function() {
   modal.className = "modal";
   $(".app").append(modal);
 
-  let masonryBg = document.createElement("div"); 
-  masonryBg.className = "masonry-bg";
-  modal.append(masonryBg);
+  let modalBg = document.createElement("div"); 
+  modalBg.className = "modal-bg";
+  modal.append(modalBg);
 
   // make each modal content card
 
@@ -152,6 +152,21 @@ $(document).ready(function() {
     $(modalDot1).addClass("modal-dot-active");
     $(modalDot2).removeClass("modal-dot-active");
     $(".modal-content-cards").css("margin-left", "200%")
+
+    let starburst = document.createElement("div");
+    starburst.className = "starburst";
+    modalBg.append(starburst);
+
+    // lottie starburst
+
+    let starburstAnimate = lottie.loadAnimation({
+      container: starburst, // the dom element that will contain the animation
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: 'https://assets1.lottiefiles.com/packages/lf20_hbkV3h.json' // the path to the animation json
+    });
+
 
 
 
@@ -268,11 +283,7 @@ $(document).ready(function() {
   if ($('body').is('.homefeedPage')) {
 
     firstHFCard(); 
- 
 
-    // if (sessionStorage.getItem('hasClickthrough') == 'true') {
-    //   secondHFCard();
-    // }
 
 
     $(".modal-button-0").click(function() {
