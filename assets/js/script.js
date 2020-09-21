@@ -262,8 +262,6 @@ $(document).ready(function() {
 
   if ($('body').is('.homefeedPage')) {
 
-    masonryBg.append(modalMasonry);
-
     firstHFCard(); 
  
 
