@@ -148,6 +148,11 @@ $(document).ready(function() {
 
     }
 
+    // this is the first step
+    $(modalDot1).addClass("modal-dot-active");
+    $(modalDot2).removeClass("modal-dot-active");
+    $(".modal-content-cards").css("margin-left", "200%")
+
 
 
 
