@@ -58,6 +58,24 @@ $(document).ready(function() {
   modalBg.className = "modal-bg";
   modal.append(modalBg);
 
+  // make carousel dots 
+
+  let modalDotsContainer = document.createElement("div");
+  modalDotsContainer.className = "modal-dots-container";
+  modal.append(modalDotsContainer);
+
+  let modalDot1 = document.createElement("div");
+  modalDot1.className = "modal-dot";
+  modalDotsContainer.append(modalDot1);
+
+  let modalDot2 = document.createElement("div");
+  modalDot2.className = "modal-dot";
+  modalDotsContainer.append(modalDot2)
+
+  let modalDot3 = document.createElement("div");
+  modalDot3.className = "modal-dot";
+  modalDotsContainer.append(modalDot3);
+
   // make each modal content card
 
   let modalContentCards = document.createElement("div");
@@ -105,30 +123,33 @@ $(document).ready(function() {
 
   }
 
-  // make carousel dots 
-
-  let modalDotsContainer = document.createElement("div");
-  modalDotsContainer.className = "modal-dots-container";
-  modal.append(modalDotsContainer);
-
-  let modalDot1 = document.createElement("div");
-  modalDot1.className = "modal-dot";
-  modalDotsContainer.append(modalDot1);
-
-  let modalDot2 = document.createElement("div");
-  modalDot2.className = "modal-dot";
-  modalDotsContainer.append(modalDot2)
-
-  let modalDot3 = document.createElement("div");
-  modalDot3.className = "modal-dot";
-  modalDotsContainer.append(modalDot3)
-
 
   let modalX = document.createElement("img");
   modalX.className = "modal-X";
   modalX.src = "assets/img/x.svg";
-  modal.append(modalX); 
 
+  $(modal).mouseenter(function(){
+    modal.append(modalX);
+  });
+
+  $(modal).mouseleave(function(){
+    modal.removeChild(modalX);
+  })
+
+  //starburst animate
+  let starburst = document.createElement("div");
+  starburst.className = "starburst";
+  modalBg.append(starburst);
+
+  // lottie starburst
+
+  let starburstAnimate = lottie.loadAnimation({
+    container: starburst, // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: 'https://assets1.lottiefiles.com/packages/lf20_doseqoad.json' // the path to the animation json
+  });
 
 
   function firstHFCard() {
@@ -153,21 +174,13 @@ $(document).ready(function() {
     $(modalDot2).removeClass("modal-dot-active");
     $(".modal-content-cards").css("margin-left", "200%")
 
-    let starburst = document.createElement("div");
-    starburst.className = "starburst";
-    modalBg.append(starburst);
 
-    // lottie starburst
+    setTimeout(function(){ 
+      starburstAnimate.playSegments([[0,68],[20,68]], true);
+    }, 1200);
 
-    let starburstAnimate = lottie.loadAnimation({
-      container: starburst, // the dom element that will contain the animation
-      renderer: 'svg',
-      loop: false,
-      autoplay: false,
-      path: 'https://assets1.lottiefiles.com/packages/lf20_hbkV3h.json' // the path to the animation json
-    });
-
-    starburstAnimate.goToAndPlay(0)
+    // starburstAnimate.play(0);
+    // console.log("heyho")
 
 
 
@@ -201,9 +214,10 @@ $(document).ready(function() {
     // modal dot transition
     $(modalDot1).removeClass("modal-dot-active");  
     $(modalDot2).addClass("modal-dot-active");  
-    $(".modal-content-cards").css("margin-left", "0%")
+    $(".modal-content-cards").css("margin-left", "0%");
 
 
+    starburstAnimate.playSegments([68,360], true);
 
 
   }
