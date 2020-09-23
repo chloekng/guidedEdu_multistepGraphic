@@ -148,7 +148,7 @@ $(document).ready(function() {
     renderer: 'svg',
     loop: true,
     autoplay: false,
-    path: 'https://assets1.lottiefiles.com/packages/lf20_doseqoad.json' // the path to the animation json
+    path: 'https://assets4.lottiefiles.com/private_files/lf30_vfraff5d.json' // the path to the animation json
   });
 
 
@@ -176,7 +176,7 @@ $(document).ready(function() {
 
 
     setTimeout(function(){ 
-      starburstAnimate.playSegments([[0,68],[20,68]], true);
+      starburstAnimate.playSegments([[0,85],[0,85]], true);
     }, 1200);
 
     // starburstAnimate.play(0);
@@ -217,7 +217,7 @@ $(document).ready(function() {
     $(".modal-content-cards").css("margin-left", "0%");
 
 
-    starburstAnimate.playSegments([68,360], true);
+    starburstAnimate.playSegments([[85,160], [120,160]], true);
 
 
   }
@@ -277,6 +277,8 @@ $(document).ready(function() {
 
     $(".item-main").removeClass("item-closeup");
     $(".item-main").addClass("item-board");
+
+    starburstAnimate.playSegments([[160,264], [215,264]], true);
 
 
     // make board rep
