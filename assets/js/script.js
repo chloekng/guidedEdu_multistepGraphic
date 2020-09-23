@@ -241,6 +241,8 @@ $(document).ready(function() {
     $(modalDot2).addClass("modal-dot-active");  
     $(".modal-content-cards").css("margin-left", "0%")
 
+    starburstAnimate.playSegments([[85,160], [120,160]], true);
+
 
 
   }
